@@ -28,6 +28,8 @@ RUN git clone git://github.com/bioperl/bioperl-live.git \
  && echo 'export PERL5LIB="'$LIB_NCPAN_PERL'/bioperl-live:$PERL5LIB"' 		>> /root/.profile \
  && echo 'export PERL5LIB="'$LIB_NCPAN_PERL'/Bio-EUtilities/lib:$PERL5LIB"' >> /root/.profile
 
- WORKDIR /root
+ENV PERL5LIB $LIB_NCPAN_PERL/ensembl/modules:$LIB_NCPAN_PERL/ensembl-compara/modules:$LIB_NCPAN_PERL/ensembl-funcgen/modules:$LIB_NCPAN_PERL/ensembl-io/modules:$LIB_NCPAN_PERL/ensembl-variation/modules:$LIB_NCPAN_PERL/bioperl-live:$LIB_NCPAN_PERL/Bio-EUtilities/lib
 
- CMD bash -l
+WORKDIR /root
+
+CMD bash -l
