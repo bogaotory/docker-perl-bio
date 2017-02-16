@@ -1,0 +1,7 @@
+services:
+  - docker
+install:
+  - docker build -t perl-bio .
+  - docker run -d --name perl-bio perl-bio
+script:
+  - docker ps | grep -q pero-bio
